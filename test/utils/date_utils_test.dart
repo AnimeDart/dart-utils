@@ -19,9 +19,7 @@ void main() {
 
       expect(
         fromMilliseconds(minute1.inMilliseconds, base),
-        equals(
-          base.add(minute1),
-        ),
+        equals(base.add(minute1)),
       );
     });
   });
