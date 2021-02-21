@@ -23,4 +23,58 @@ void main() {
       }
     });
   });
+  group('linearInterpolation() method', () {
+    test('simple operation', () {
+      final getInterpolationValueAt = linearInterpolation([
+        0,
+        50,
+      ], [
+        9000,
+        18000,
+      ]);
+
+      final valueAt25 = getInterpolationValueAt(25);
+
+      expect(valueAt25, equals(13500));
+    });
+    test('negative values', () {
+      final getInterpolationValueAt = linearInterpolation([
+        -100,
+        -50,
+      ], [
+        9000,
+        18000,
+      ]);
+
+      final valueAt25 = getInterpolationValueAt(-75);
+
+      expect(valueAt25, equals(13500));
+    });
+    test('should throw ArgumentError', () {
+      final getInterpolationValueAt = linearInterpolation([
+        -100,
+        -50,
+      ], [
+        9000,
+        18000,
+      ]);
+
+      void _getValueAtMinus101() => getInterpolationValueAt(-101);
+
+      expect(_getValueAtMinus101, throwsA(isA<ArgumentError>()));
+    });
+    test("shouldnt throw ArgumentError", () {
+      final getInterpolationValueAt = linearInterpolation([
+        -100,
+        -50,
+      ], [
+        9000,
+        18000,
+      ], keepInRange: true);
+
+      final valueAtMinus101 = getInterpolationValueAt(-101);
+
+      expect(valueAtMinus101, equals(9000));
+    });
+  });
 }
