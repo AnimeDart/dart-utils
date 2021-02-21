@@ -3,7 +3,7 @@ description: Utils for any Dart enviroment
 
 publish_to: "none"
 
-version: 1.0.0+1
+version: "1.0.0+1"
 
 environment:
   sdk: ">=2.9.0 <3.0.0"
@@ -13,6 +13,10 @@ dependencies:
 
 dev_dependencies:
   effective_dart: ^1.3.0
-  commit_formatter:
-    git: https://github.com/LaksCastro/commit-formatter
   test: ^1.15.7
+  hanzo: ^1.0.2 # Install/Enable Git Hooks for Dart
+  process_run: ^0.11.2+8
+
+  # Local deps
+  commit_formatter:
+    git: https://github.com/AnimeDart/commit-formatter

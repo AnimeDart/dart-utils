@@ -1,5 +1,5 @@
 /// Generic function to verify if two [Iterables]
-/// has at least one item in commom
+/// has at least one commom item
 ///
 /// **True** if has intersection, otherwise, false
 bool hasIntersection<T>(Iterable<T> a, Iterable<T> b) {
